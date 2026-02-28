@@ -32,15 +32,13 @@ const Hero = () => {
     <section id="home" className="relative h-screen w-full overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/naruto-background.mp4" type="video/mp4" />
-        </video>
+        <Image
+          src="/naruto-hero.jpg"
+          alt="Naruto Background"
+          fill
+          className="object-cover"
+          priority
+        />
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90"></div>
         {/* Orange Glow Overlay */}

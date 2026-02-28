@@ -55,7 +55,7 @@ const VillageModal = ({ village, onClose }: VillageModalProps) => {
                 </button>
 
                 {/* Header Image */}
-                <div className="relative h-64 sm:h-80 w-full shrink-0">
+                <div className="relative h-48 sm:h-80 w-full shrink-0">
                     <Image
                         src={village.image}
                         alt={village.name}
@@ -74,14 +74,14 @@ const VillageModal = ({ village, onClose }: VillageModalProps) => {
                                 Led by {village.kage}
                             </span>
                         </div>
-                        <h2 className="text-4xl sm:text-5xl font-black text-white drop-shadow-lg flex items-center gap-4">
+                        <h2 className="text-3xl sm:text-5xl font-black text-white drop-shadow-lg flex items-center gap-4">
                             {village.name}
                         </h2>
                     </div>
                 </div>
 
                 {/* Details Body */}
-                <div className="p-6 sm:p-8 overflow-y-auto custom-scrollbar">
+                <div className="p-6 sm:p-8 overflow-y-auto custom-scrollbar flex-1">
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="md:col-span-2 space-y-6">
                             <div>

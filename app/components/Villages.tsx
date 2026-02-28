@@ -140,7 +140,7 @@ const Villages = () => {
                 </div>
 
                 {/* Content */}
-                <div className="grid lg:grid-cols-12 gap-8 items-center min-h-[500px]">
+                <div className="grid lg:grid-cols-12 gap-8 items-center lg:min-h-[500px]">
 
                     {/* Left Navigation */}
                     <div className={`lg:col-span-4 space-y-4 transform transition-all duration-1000 delay-300 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`}>
@@ -172,8 +172,8 @@ const Villages = () => {
                     </div>
 
                     {/* Right Content */}
-                    <div className={`lg:col-span-8 h-full transform transition-all duration-1000 delay-500 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}>
-                        <div className="relative w-full h-[500px] rounded-3xl overflow-hidden group">
+                    <div className={`lg:col-span-8 w-full mt-8 lg:mt-0 transform transition-all duration-1000 delay-500 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}>
+                        <div className="relative w-full min-h-[500px] lg:h-[500px] rounded-3xl overflow-hidden group">
                             {/* Dynamic Image */}
                             <div className="absolute inset-0 transition-all duration-1000 ease-in-out">
                                 {villages.map((village, index) => (
@@ -186,18 +186,18 @@ const Villages = () => {
                                             src={village.image}
                                             alt={village.name}
                                             fill
-                                            className="object-contain object-center bg-black/40 transition-transform duration-1000 lg:group-hover:scale-110"
+                                            className="object-contain lg:object-cover object-top lg:object-center bg-transparent transition-transform duration-1000 lg:group-hover:scale-110"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 lg:via-black/60 to-transparent"></div>
                                         <div className={`absolute inset-0 bg-gradient-to-r ${village.color} opacity-20 mix-blend-overlay`}></div>
                                     </div>
                                 ))}
                             </div>
 
                             {/* Village Details Overlay */}
-                            <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 z-20">
+                            <div className="relative lg:absolute bottom-0 left-0 w-full p-6 md:p-12 z-20 pt-[250px] lg:pt-0">
                                 <div className="animate-fade-in-up" key={activeVillage}>
-                                    <div className="flex items-center space-x-4 mb-4">
+                                    <div className="flex flex-wrap items-center gap-4 mb-4">
                                         <span className="px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold text-sm">
                                             {villages[activeVillage].symbol}
                                         </span>
@@ -205,7 +205,7 @@ const Villages = () => {
                                             Led by {villages[activeVillage].kage}
                                         </span>
                                     </div>
-                                    <p className="text-gray-200 text-lg leading-relaxed md:w-3/4 mb-6">
+                                    <p className="text-gray-200 text-base lg:text-lg leading-relaxed md:w-3/4 mb-6">
                                         {villages[activeVillage].description}
                                     </p>
 

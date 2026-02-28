@@ -55,7 +55,7 @@ const Story = () => {
             title: "The Fourth Great Ninja War",
             subtitle: "Shippuden: Climax",
             episodes: "Episodes 254 - 479",
-            image: "https://wallpapercave.com/wp/wp4319453.jpg",
+            image: "/4th.png",
             description: "The Allied Shinobi Forces face off against Obito, Madara, and the reanimated army. Legendary figures from the past return to the battlefield in the fight that will determine the fate of the ninja world.",
             color: "from-orange-600 to-red-600",
             highlights: ["Seven Ninja Swordsmen", "The Ten-Tails Revival", "Team 7 Reunited", "Kaguya Otsutsuki Strikes", "Naruto vs Sasuke"],
@@ -65,7 +65,7 @@ const Story = () => {
             title: "A New Era",
             subtitle: "Shippuden: Epilogue",
             episodes: "Episodes 480 - 500",
-            image: "https://wallpapercave.com/wp/wp6615714.jpg",
+            image: "/6th.jpg",
             description: "Following the conclusion of the Fourth Great Ninja War, the heroes navigate their lives in the hard-won peace. The era concludes with the long-awaited wedding of Naruto and Hinata.",
             color: "from-pink-400 to-red-300",
             highlights: ["Sasuke's Story: Sunrise", "Shikamaru's Story", "Hidden Leaf Village Grand Sports Festival", "Naruto and Hinata's Wedding"],
@@ -123,7 +123,6 @@ const Story = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent"></div>
-                <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay"></div>
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -150,10 +149,10 @@ const Story = () => {
                 </div>
 
                 {/* Content Layout */}
-                <div className="grid lg:grid-cols-12 gap-12 items-start h-[600px]">
+                <div className="grid lg:grid-cols-12 gap-12 items-start lg:min-h-[600px]">
 
                     {/* Left Side - Interactive Visual Showcase */}
-                    <div className={`lg:col-span-7 h-full w-full transform transition-all duration-1000 delay-300 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`}>
+                    <div className={`hidden lg:block lg:col-span-7 h-full w-full transform transition-all duration-1000 delay-300 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`}>
                         <div className="relative h-full w-full rounded-3xl overflow-hidden shadow-2xl shadow-red-900/20 border border-white/10 group">
                             <Image
                                 key={activeArc}
@@ -189,7 +188,7 @@ const Story = () => {
                     </div>
 
                     {/* Right Side - Timeline Scroll */}
-                    <div className={`lg:col-span-5 h-full relative transform transition-all duration-1000 delay-500 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}>
+                    <div className={`lg:col-span-5 w-full relative transform transition-all duration-1000 delay-500 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}>
 
                         {/* Scroll Indicator Line */}
                         <div className="absolute left-8 top-0 bottom-0 w-1 bg-gray-800 rounded-full hidden md:block z-0">
@@ -203,9 +202,9 @@ const Story = () => {
                         <div
                             ref={scrollContainerRef}
                             onScroll={handleScroll}
-                            className="h-full overflow-y-auto pr-4 custom-scrollbar relative z-10 pb-32"
+                            className="max-h-[70vh] lg:max-h-none lg:h-[600px] overflow-y-auto pr-4 custom-scrollbar relative z-10 pb-16 lg:pb-32"
                         >
-                            <div className="space-y-8 pl-0 md:pl-16">
+                            <div className="space-y-4 lg:space-y-8 pl-0 md:pl-16">
                                 {storyArcs.map((arc, index) => {
                                     const isActive = index === activeArc;
                                     return (
